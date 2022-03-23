@@ -1,0 +1,33 @@
+li.voice-state:not([data-reactid*="DISCORD USER ID"]) { display:none; }
+.avatar {
+content:url(NOT SPEAKING IMAGE URL);
+  height:auto !important;
+  width:auto !important;
+  border-radius:0% !important;
+  filter: brightness(50%); 
+/*Change brightness to change dimming*/
+}
+
+.speaking {
+  border-color:rgba(0,0,0,0) !important;
+  position:relative;
+  animation-name: speak-now;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+  filter: brightness(100%);
+content:url(SPEAKING IMAGE URL);
+}
+
+@keyframes speak-now {
+  0% { bottom:0px;  }
+  15% { bottom:10px;  }
+  30% { bottom:0px;  }
+}
+
+li.voice-state{ position: static; }
+div.user{ position: absolute; left:40%; bottom:5%; }
+
+body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }
+
+/USE DEVELOPER TOOLS IN DISCORD TO PULL DISCORD USER IDs/
+/USE DISCORD STREAMKIT OVERLAY FOR OBS TO ASSIGN THE CORRECT CHANNEL FOR THIS TO TAKE EFFECT/
